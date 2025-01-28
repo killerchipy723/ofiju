@@ -37,4 +37,71 @@ public class PersonalData {
             Logger.getLogger(PersonalData.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    // combo fiscal
+    
+      public void comboFiscal(JComboBox lista){
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+        String sql = "Select * from personal where cargo = 'FISCAL'";
+        try {
+            Statement st = con.createStatement();
+       ResultSet rs = st.executeQuery(sql);
+       while(rs.next()){
+           Personal personal = new Personal();
+           personal.setApellido(rs.getString("apellido"));
+           personal.setNombre(rs.getString("nombre"));
+           personal.setCargo(rs.getString("cargo"));
+           modelo.addElement(personal.getApellido()+", "+personal.getNombre());
+           lista.setModel(modelo);
+       }
+          
+        
+        } catch (SQLException ex) {
+            Logger.getLogger(PersonalData.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+      
+      // combo audiencista
+      
+       public void comboAudiencista(JComboBox lista){
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+        String sql = "Select * from personal where cargo = 'AUDIENCISTA'";
+        try {
+            Statement st = con.createStatement();
+       ResultSet rs = st.executeQuery(sql);
+       while(rs.next()){
+           Personal personal = new Personal();
+           personal.setApellido(rs.getString("apellido"));
+           personal.setNombre(rs.getString("nombre"));
+           personal.setCargo(rs.getString("cargo"));
+           modelo.addElement(personal.getApellido()+", "+personal.getNombre());
+           lista.setModel(modelo);
+       }
+          
+        
+        } catch (SQLException ex) {
+            Logger.getLogger(PersonalData.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+       
+        public void comboAtencion(JComboBox lista){
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+        String sql = "Select * from personal where cargo = 'ATENCION AL PUBLICO'";
+        try {
+            Statement st = con.createStatement();
+       ResultSet rs = st.executeQuery(sql);
+       while(rs.next()){
+           Personal personal = new Personal();
+           personal.setApellido(rs.getString("apellido"));
+           personal.setNombre(rs.getString("nombre"));
+           personal.setCargo(rs.getString("cargo"));
+           modelo.addElement(personal.getApellido()+", "+personal.getNombre());
+           lista.setModel(modelo);
+       }
+          
+        
+        } catch (SQLException ex) {
+            Logger.getLogger(PersonalData.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }

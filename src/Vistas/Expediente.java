@@ -11,6 +11,9 @@ PersonalData pd = new PersonalData();
     public Expediente() {
         initComponents();
         pd.comboTecnico(comboTecnico);
+        pd.comboFiscal(comboFiscal);
+        pd.comboAudiencista(comboAud);
+        pd.comboAtencion(comboAtencion);
     }
 
     
@@ -40,8 +43,8 @@ PersonalData pd = new PersonalData();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         comboTecnico = new javax.swing.JComboBox<>();
-        comboOrganismo9 = new javax.swing.JComboBox<>();
-        comboOrganismo10 = new javax.swing.JComboBox<>();
+        comboAud = new javax.swing.JComboBox<>();
+        comboAtencion = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -55,7 +58,7 @@ PersonalData pd = new PersonalData();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         comboOrganismo3 = new javax.swing.JComboBox<>();
-        comboOrganismo4 = new javax.swing.JComboBox<>();
+        comboFiscal = new javax.swing.JComboBox<>();
         comboOrganismo5 = new javax.swing.JComboBox<>();
         comboOrganismo6 = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
@@ -149,17 +152,15 @@ PersonalData pd = new PersonalData();
             }
         });
 
-        comboOrganismo9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dra. Castillo, Victoria", "Dra. Delgado, Célide", "Dra. García, Verónica", "Dra. Suárez, Valentina", "Dr. Gramaglia, Ramiro", "Dr. San Martín, Guillermo", "Silva, Mariela", "Farah, Julián" }));
-        comboOrganismo9.addActionListener(new java.awt.event.ActionListener() {
+        comboAud.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboOrganismo9ActionPerformed(evt);
+                comboAudActionPerformed(evt);
             }
         });
 
-        comboOrganismo10.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Julián, Farah", "Abeyá, Matías", "Tonetti, Marcela", "Pedraza, Siilvina" }));
-        comboOrganismo10.addActionListener(new java.awt.event.ActionListener() {
+        comboAtencion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboOrganismo10ActionPerformed(evt);
+                comboAtencionActionPerformed(evt);
             }
         });
 
@@ -168,39 +169,38 @@ PersonalData pd = new PersonalData();
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(42, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel12)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(comboTecnico, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                        .addComponent(comboOrganismo10, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(comboAtencion, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel12))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(comboTecnico, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                     .addContainerGap(132, Short.MAX_VALUE)
-                    .addComponent(comboOrganismo9, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboAud, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap()))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel8)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(jLabel11)
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel8)
                         .addGap(45, 45, 45))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(comboOrganismo10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(77, 77, 77)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(comboAtencion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel11))
                         .addGap(30, 30, 30)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
@@ -209,7 +209,7 @@ PersonalData pd = new PersonalData();
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addGap(21, 21, 21)
-                    .addComponent(comboOrganismo9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboAud, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(128, Short.MAX_VALUE)))
         );
 
@@ -285,10 +285,9 @@ PersonalData pd = new PersonalData();
             }
         });
 
-        comboOrganismo4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dr. Castellanos, Sergio Osvaldo", "Dr. Gómez, Gonzalo Amado", "Dra. Redondo, Susana", "Dr. López Ibarra, Oscar", "Dr. Rodriguez, Nicolás", "Dra. García Pisacic, María Celeste", " " }));
-        comboOrganismo4.addActionListener(new java.awt.event.ActionListener() {
+        comboFiscal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboOrganismo4ActionPerformed(evt);
+                comboFiscalActionPerformed(evt);
             }
         });
 
@@ -312,11 +311,11 @@ PersonalData pd = new PersonalData();
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel18)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(comboOrganismo4, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(comboFiscal, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel20)
                         .addGap(18, 18, 18)
@@ -341,7 +340,7 @@ PersonalData pd = new PersonalData();
                 .addGap(21, 21, 21)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel18)
-                    .addComponent(comboOrganismo4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(comboFiscal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
@@ -450,7 +449,7 @@ PersonalData pd = new PersonalData();
                                 .addComponent(jLabel15)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(comboOrganismo, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 5, Short.MAX_VALUE))
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -550,13 +549,13 @@ PersonalData pd = new PersonalData();
         // TODO add your handling code here:
     }//GEN-LAST:event_comboTecnicoActionPerformed
 
-    private void comboOrganismo9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboOrganismo9ActionPerformed
+    private void comboAudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboAudActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_comboOrganismo9ActionPerformed
+    }//GEN-LAST:event_comboAudActionPerformed
 
-    private void comboOrganismo10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboOrganismo10ActionPerformed
+    private void comboAtencionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboAtencionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_comboOrganismo10ActionPerformed
+    }//GEN-LAST:event_comboAtencionActionPerformed
 
     private void comboOrganismo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboOrganismo1ActionPerformed
         // TODO add your handling code here:
@@ -566,9 +565,9 @@ PersonalData pd = new PersonalData();
         // TODO add your handling code here:
     }//GEN-LAST:event_comboOrganismo3ActionPerformed
 
-    private void comboOrganismo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboOrganismo4ActionPerformed
+    private void comboFiscalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboFiscalActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_comboOrganismo4ActionPerformed
+    }//GEN-LAST:event_comboFiscalActionPerformed
 
     private void comboOrganismo5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboOrganismo5ActionPerformed
         // TODO add your handling code here:
@@ -623,16 +622,16 @@ PersonalData pd = new PersonalData();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnModificar;
+    private javax.swing.JComboBox<String> comboAtencion;
+    private javax.swing.JComboBox<String> comboAud;
+    private javax.swing.JComboBox<String> comboFiscal;
     private javax.swing.JComboBox<String> comboHora;
     private javax.swing.JComboBox<String> comboOrganismo;
     private javax.swing.JComboBox<String> comboOrganismo1;
-    private javax.swing.JComboBox<String> comboOrganismo10;
     private javax.swing.JComboBox<String> comboOrganismo2;
     private javax.swing.JComboBox<String> comboOrganismo3;
-    private javax.swing.JComboBox<String> comboOrganismo4;
     private javax.swing.JComboBox<String> comboOrganismo5;
     private javax.swing.JComboBox<String> comboOrganismo6;
-    private javax.swing.JComboBox<String> comboOrganismo9;
     private javax.swing.JComboBox<String> comboPedido;
     private javax.swing.JComboBox<String> comboTecnico;
     private javax.swing.JButton jButton1;
