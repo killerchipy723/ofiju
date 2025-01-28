@@ -555,9 +555,8 @@ public class Expediente extends javax.swing.JFrame {
     }//GEN-LAST:event_comboHoraActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        try {
-        }
-        }
+   
+      
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void comboOrganismo8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboOrganismo8ActionPerformed

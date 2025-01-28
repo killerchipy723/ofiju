@@ -1,4 +1,4 @@
- */
+
 package ingreso;
 
 import Clases.ConsultaExpte;
@@ -378,7 +378,7 @@ public class ingreso extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>   
-package Vistas;
+
 
 /**
  *
