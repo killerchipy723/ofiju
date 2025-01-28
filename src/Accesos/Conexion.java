@@ -11,14 +11,10 @@ public class Conexion {
     public static Connection Conectar() {
         try {
             if (con == null || con.isClosed()) {
-                // Controlador para MySQL o MariaDB
-                String driver = "org.mariadb.jdbc.Driver"; // Funciona tanto para MySQL como para MariaDB
-                // URL de conexión para MySQL/MariaDB (localhost por defecto)
-                String url = "jdbc:mysql://localhost:3306/ofiju"; // Cambia "nombre_base_datos" por tu base de datos
-                String usr = "root"; // Cambia por el nombre de usuario de phpMyAdmin
-                String pwd = ""; // Cambia por la contraseña del usuario
-
-                // Cargar el driver de MariaDB o MySQL
+               String driver = "org.mariadb.jdbc.Driver";
+                String url = "jdbc:mariadb://localhost:3306/oficina-ofiju"; // URL de conexión con el servidor y base de datos
+                String usr = "root"; // Usuario de la base de datos
+                String pwd = "";  // Contraseña de la base de datos
                 Class.forName(driver);
 
                 // Establecer la conexión
