@@ -5,7 +5,7 @@
  */
 package Vistas;
 import java.sql.*;
-import Clases.Conexion;
+
 import java.sql.PreparedStatement;
 
 /**
@@ -30,7 +30,6 @@ public class Expediente extends javax.swing.JFrame {
         comboOrganismo = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         txtExpte = new javax.swing.JTextField();
-        txtFecha = new com.toedter.calendar.JDateChooser();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         btnModificar = new javax.swing.JButton();
@@ -95,8 +94,6 @@ public class Expediente extends javax.swing.JFrame {
         jLabel3.setText("Carátula:");
 
         txtExpte.setBackground(new java.awt.Color(0, 153, 255));
-
-        txtFecha.setDateFormatString("yyyy-MM-dd");
 
         jLabel4.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel4.setText("Fecha de Audiencia");
@@ -409,9 +406,7 @@ public class Expediente extends javax.swing.JFrame {
                                 .addComponent(comboPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(29, 29, 29)
                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(27, 27, 27)
+                                .addGap(177, 177, 177)
                                 .addComponent(jLabel9)
                                 .addGap(49, 49, 49)
                                 .addComponent(comboHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -505,7 +500,6 @@ public class Expediente extends javax.swing.JFrame {
                         .addComponent(jLabel7)
                         .addComponent(comboPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel4))
-                    .addComponent(txtFecha, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel9)
                         .addComponent(comboHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -682,7 +676,6 @@ public class Expediente extends javax.swing.JFrame {
     private javax.swing.JTextField txtExpte;
     private javax.swing.JTextField txtExpte1;
     private javax.swing.JTextField txtExpte2;
-    private com.toedter.calendar.JDateChooser txtFecha;
     // End of variables declaration//GEN-END:variables
 
     private static class conect {

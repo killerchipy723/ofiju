@@ -5,8 +5,7 @@
  */
 package Vistas;
 
-import Clases.Asesor;
-import Clases.AsesorData;
+
 
 /**
  *
@@ -14,12 +13,11 @@ import Clases.AsesorData;
  */
 public class BusquedaAsesor extends javax.swing.JFrame {
 
-   Asesor asesor = new Asesor();
+ 
   
     public BusquedaAsesor() {
         initComponents();
-        asesor.listarAsesor(comboAsesor);
-        setLocationRelativeTo(null);
+       
     }
 
     /**

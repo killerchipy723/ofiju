@@ -5,8 +5,7 @@
  */
 package Vistas;
 
-import Clases.Defensor;
-import Clases.DefensorData;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -19,11 +18,11 @@ import javax.swing.table.DefaultTableModel;
  */
 public class BusquedaDefensor extends javax.swing.JFrame {
 
-   Defensor def = new Defensor();
+   
     public BusquedaDefensor() {
         initComponents();
         setLocationRelativeTo(null);
-        def.listarDefensor(comboDefensor);
+        
     }
 
     /**
