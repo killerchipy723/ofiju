@@ -34,4 +34,8 @@ public class UsuarioData {
         }
         
     }
+    
+    public void login(){
+        String sql = "select * from usuario";
+    }
 }
