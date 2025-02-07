@@ -207,4 +207,25 @@ public class PersonalData {
             Logger.getLogger(PersonalData.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+         
+         public void comboDefensor(JComboBox lista){
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+        String sql = "Select * from personal where cargo = 'DEFENSOR'";
+        try {
+            Statement st = con.createStatement();
+       ResultSet rs = st.executeQuery(sql);
+       while(rs.next()){
+           Personal personal = new Personal();
+           personal.setApellido(rs.getString("apellido"));
+           personal.setNombre(rs.getString("nombre"));
+           personal.setCargo(rs.getString("cargo"));
+           modelo.addElement(personal.getApellido()+", "+personal.getNombre());
+           lista.setModel(modelo);
+       }
+          
+        
+        } catch (SQLException ex) {
+            Logger.getLogger(PersonalData.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
