@@ -16,7 +16,9 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
+import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 
 
 public class UsuarioData {
@@ -79,5 +81,26 @@ public class UsuarioData {
                                       "ERROR DE BASE DE DATOS", JOptionPane.ERROR_MESSAGE);
     }
 }
-
+// TABLA USUARIO
+    public void tablaUsuario(JTable lista){
+        DefaultTableModel modelo = new DefaultTableModel();
+        modelo.setColumnIdentifiers(new Object[]{"ID","NOMBRE","APELLIDO","USUARIO","PRIVILEGIO"});
+        String sql = "select * from usuario";
+        try {
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                modelo.addRow(new Object[]{
+                    rs.getString("ID_USUARIO"),
+                    rs.getString("apellido"),
+                    rs.getString("nombre"),
+                    rs.getString("usuario"),
+                    rs.getString("privilegio")
+                });
+                lista.setModel(modelo);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(UsuarioData.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }

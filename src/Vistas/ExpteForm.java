@@ -13,6 +13,7 @@ public class ExpteForm extends javax.swing.JFrame {
         pd.comboFiscal(comboFiscal);
         pd.comboAudiencista(comboAud);
         pd.comboAtencion(comboAtencion);
+        pd.comboJuez(comboJuez);
         setLocationRelativeTo(null);
     }
 
@@ -54,7 +55,7 @@ public class ExpteForm extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        comboOrganismo3 = new javax.swing.JComboBox<>();
+        comboJuez = new javax.swing.JComboBox<>();
         comboFiscal = new javax.swing.JComboBox<>();
         comboOrganismo5 = new javax.swing.JComboBox<>();
         comboOrganismo6 = new javax.swing.JComboBox<>();
@@ -233,10 +234,10 @@ public class ExpteForm extends javax.swing.JFrame {
 
         jLabel20.setText("Asesor de Menores");
 
-        comboOrganismo3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dr. Fucho, Sebastián Gustavo", "Dra. Poma, Carolina Edith", "Dr. Haddad, Ramón Alberto", "Dr. Teseyra, Mario Herminio", "Dr. Dilascio, Mario" }));
-        comboOrganismo3.addActionListener(new java.awt.event.ActionListener() {
+        comboJuez.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dr. Fucho, Sebastián Gustavo", "Dra. Poma, Carolina Edith", "Dr. Haddad, Ramón Alberto", "Dr. Teseyra, Mario Herminio", "Dr. Dilascio, Mario" }));
+        comboJuez.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboOrganismo3ActionPerformed(evt);
+                comboJuezActionPerformed(evt);
             }
         });
 
@@ -278,7 +279,7 @@ public class ExpteForm extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel17)
                         .addGap(18, 18, 18)
-                        .addComponent(comboOrganismo3, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(comboJuez, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel19)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -291,7 +292,7 @@ public class ExpteForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17)
-                    .addComponent(comboOrganismo3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(comboJuez, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel18)
@@ -571,9 +572,9 @@ public class ExpteForm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_comboFiscalActionPerformed
 
-    private void comboOrganismo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboOrganismo3ActionPerformed
+    private void comboJuezActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboJuezActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_comboOrganismo3ActionPerformed
+    }//GEN-LAST:event_comboJuezActionPerformed
 
     private void comboAtencionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboAtencionActionPerformed
         // TODO add your handling code here:
@@ -649,10 +650,10 @@ public class ExpteForm extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> comboAud;
     private javax.swing.JComboBox<String> comboFiscal;
     private javax.swing.JComboBox<String> comboHora;
+    private javax.swing.JComboBox<String> comboJuez;
     private javax.swing.JComboBox<String> comboOrganismo;
     private javax.swing.JComboBox<String> comboOrganismo1;
     private javax.swing.JComboBox<String> comboOrganismo2;
-    private javax.swing.JComboBox<String> comboOrganismo3;
     private javax.swing.JComboBox<String> comboOrganismo5;
     private javax.swing.JComboBox<String> comboOrganismo6;
     private javax.swing.JComboBox<String> comboPedido;
