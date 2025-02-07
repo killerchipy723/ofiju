@@ -3,6 +3,8 @@ package Entidades;
 
 import Accesos.Conexion;
 import Accesos.Usuario;
+import Vistas.FormPrincipal;
+import Vistas.Login;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,6 +13,7 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JComboBox;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -54,6 +57,14 @@ public class UsuarioData {
 
             if(uss.equals(usu) && pss.equals(pas)){
                 JOptionPane.showMessageDialog(null,"Acceso Correcto al Sistema");
+                Login login = new Login();
+                FormPrincipal pri = new FormPrincipal();
+                pri.setVisible(true);
+                login.dispose();
+               
+                
+             
+                
             } else {
                 JOptionPane.showMessageDialog(null,"Usuario o Contraseña Incorrectos", 
                                               "ERROR DE AUTENTICACIÓN", JOptionPane.ERROR_MESSAGE);
