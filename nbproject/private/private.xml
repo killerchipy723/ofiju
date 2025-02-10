@@ -3,10 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/54387/Documents/NetBeansProjects/Ofiju/src/Entidades/UsuarioData.java</file>
             <file>file:/C:/Users/54387/Documents/NetBeansProjects/Ofiju/src/Accesos/Usuario.java</file>
             <file>file:/C:/Users/54387/Documents/NetBeansProjects/Ofiju/src/Vistas/FormPrincipal.java</file>
             <file>file:/C:/Users/54387/Documents/NetBeansProjects/Ofiju/src/Vistas/Login.java</file>
+=======
+            <file>file:/C:/Users/Claudio/OneDrive/Documentos/GitHub/ofiju/src/Vistas/ExpteForm.java</file>
+            <file>file:/C:/Users/Claudio/OneDrive/Documentos/GitHub/ofiju/src/Entidades/PersonalData.java</file>
+            <file>file:/C:/Users/Claudio/OneDrive/Documentos/GitHub/ofiju/src/Vistas/UsuarioForm.java</file>
+            <file>file:/C:/Users/Claudio/OneDrive/Documentos/GitHub/ofiju/src/Entidades/UsuarioData.java</file>
+>>>>>>> 3890e4a8c48bcac9f9e1781f9102187cc698eb1a
         </group>
     </open-files>
 </project-private>
