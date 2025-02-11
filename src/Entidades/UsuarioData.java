@@ -25,7 +25,7 @@ public class UsuarioData {
     Connection con = Conexion.Conectar();
     
     public void agregarUsuario(JTextField nom,JTextField ape,JTextField usu,JPasswordField clave,JComboBox priv){
-        String sql = "Insert  into usuario (nombre,apellido,usuario,clave,privilegio)VALUES(?,?,?,?,?)";
+        String sql = "Insert into usuario (nombre,apellido,usuario,clave,privilegio)VALUES(?,?,?,?,?)";
         try {
             PreparedStatement pst = con.prepareStatement(sql);
             pst.setString(1,nom.getText());
