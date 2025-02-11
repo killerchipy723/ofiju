@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-02-2025 a las 14:30:01
+-- Tiempo de generación: 12-02-2025 a las 00:09:43
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -28,20 +28,29 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `expedientes` (
-  `ID_EXP` int(255) NOT NULL,
-  `NUMERO` int(100) NOT NULL,
-  `CARATULA` varchar(300) NOT NULL,
-  `LEGAJO` int(10) NOT NULL,
-  `AP` int(10) NOT NULL,
-  `ESTADO` varchar(50) NOT NULL,
-  `OBSERVACIONES` varchar(50) NOT NULL,
-  `FECHA_INGRESO` date NOT NULL,
-  `FECHA_EGRESO` date NOT NULL,
-  `FECHA_AUDIENCIA` date NOT NULL,
-  `HORA_AUDIENCIA` datetime(6) NOT NULL,
-  `ULTIMO_TRAMITE` varchar(200) NOT NULL,
-  `ID_ORGANISMO` int(10) NOT NULL,
-  `ID_PERSONAL` int(255) NOT NULL
+  `id_exp` int(255) NOT NULL,
+  `numero` varchar(100) NOT NULL,
+  `id_organismo` int(10) NOT NULL,
+  `legajo` varchar(50) NOT NULL,
+  `ap` varchar(50) NOT NULL,
+  `estado` varchar(50) NOT NULL,
+  `caratula` varchar(300) NOT NULL,
+  `audiencista` varchar(100) NOT NULL,
+  `apublico` varchar(100) NOT NULL,
+  `tecnico` varchar(100) NOT NULL,
+  `secretario` varchar(100) NOT NULL,
+  `juez` varchar(100) NOT NULL,
+  `fiscal` varchar(100) NOT NULL,
+  `defensor` varchar(100) NOT NULL,
+  `abo` varchar(100) NOT NULL,
+  `faudiencia` date NOT NULL,
+  `haudiencia` varchar(150) NOT NULL,
+  `fingreso` date NOT NULL,
+  `fegreso` date NOT NULL,
+  `utramite` varchar(200) NOT NULL,
+  `pedido` varchar(100) NOT NULL,
+  `observaciones` varchar(300) NOT NULL,
+  `id_personal` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -84,14 +93,14 @@ CREATE TABLE `personal` (
 --
 
 INSERT INTO `personal` (`id_personal`, `apellido`, `nombre`, `CARGO`) VALUES
-(1, 'DR. MARTINEZ', 'JOSE EDGARDO', 'DEFENSOR OFICIAL'),
-(2, 'DR. COLQUE', 'JORGE ROLANDO', 'DEFENSOR OFICIAL'),
+(1, 'DR. MARTINEZ', 'JOSE EDGARDO', 'DEFENSOR  '),
+(2, 'DR. COLQUE', 'JORGE ROLANDO', 'DEFENSOR  '),
 (3, 'DR. CASTELLANO', 'SERGIO OSVALDO', 'FISCAL'),
-(4, 'DR.GOMEZ', 'AMADO GONZALO', 'FISCAL'),
-(5, 'DRA. REDONDO', 'SUSANA', 'FISCAL'),
-(6, 'DR. LÓPEZ IBARRA', 'OSCAR', 'FISCAL'),
-(7, 'DR. RODRIGUEZ', 'NICOLAS', 'FISCAL'),
-(8, 'DRA. GARCIA PISACIC', 'MARIA CELESTE', 'FISCAL'),
+(4, 'DR.GOMEZ', 'AMADO GONZALO', 'FISCAL '),
+(5, 'DRA. REDONDO', 'SUSANA', 'FISCAL '),
+(6, 'DR. LÓPEZ IBARRA', 'OSCAR', 'FISCAL '),
+(7, 'DR. RODRIGUEZ', 'NICOLAS ', 'FISCAL '),
+(8, 'DRA. GARCIA PISACIC', 'MARIA CELESTE', 'FISCAL '),
 (9, 'DR. SALINAS ODORICIO', 'JUAN MANUEL', 'DEFENSOR'),
 (10, 'DR. ANDULCE', 'VICTOR', 'DEFENSOR'),
 (11, 'DR. GRAMAGLIA', 'RAMIRO', 'AUDIENCISTA'),
@@ -112,12 +121,18 @@ INSERT INTO `personal` (`id_personal`, `apellido`, `nombre`, `CARGO`) VALUES
 (26, 'ZIGARAN', 'MARIA GUADALUPE', 'MESA DE ENTRADA'),
 (27, 'PEDRAZA', 'SILVINA', 'MESA DE ENTRADA\r\n'),
 (28, 'DR. RETUERA', 'JOSE HORACIO', 'COORDINADOR'),
-(29, 'DR. FUCHO', 'SEBASTIÁN GUSTAVO', 'JUEZ'),
-(30, 'DRA. POMA SALVADORES', 'CAROLINA EDITH', 'JUEZ'),
-(31, 'DR. HADDAD', 'RAMÓN ALBERTO', 'JUEZ'),
-(32, 'DR. DILASCIO', 'MARIO', 'JUEZ'),
-(33, 'DR. TESYRA', 'MARIO HERMINIO', 'JUEZ'),
-(34, '', '', '');
+(29, 'DR. FUCHO', 'SEBASTIÁN GUSTAVO', 'JUEZ '),
+(30, 'DRA. POMA SALVADORES', 'CAROLINA EDITH', 'JUEZ '),
+(31, 'DR. HADDAD', 'RAMÓN ALBERTO', 'JUEZ '),
+(32, 'DR. DILASCIO', 'MARIO', 'JUEZ  '),
+(33, 'DR. TESYRA', 'MARIO HERMINIO', 'JUEZ  '),
+(34, 'SARAVIA', 'CESAR ARTURO', ' FISCAL'),
+(35, 'GUZMAN', 'HECTOR SEBASTIAN', 'JUEZ '),
+(36, 'OTERO', 'DIANA VERONICA', 'SECRETARIO'),
+(37, 'PALERMO', 'HUGO MATIAS', 'PALERMO'),
+(38, 'ANDIAS', 'RENATA', 'SECRETARIO'),
+(39, 'CAILLOU', 'LUCIANA', 'SECRETARIO'),
+(40, 'GARCIA', 'VALERIA', 'CARGO');
 
 -- --------------------------------------------------------
 
@@ -149,9 +164,9 @@ INSERT INTO `usuario` (`ID_USUARIO`, `nombre`, `apellido`, `usuario`, `clave`, `
 -- Indices de la tabla `expedientes`
 --
 ALTER TABLE `expedientes`
-  ADD PRIMARY KEY (`ID_EXP`),
-  ADD KEY `ID_ORGANISMO` (`ID_ORGANISMO`),
-  ADD KEY `ID_PERSONAL` (`ID_PERSONAL`);
+  ADD PRIMARY KEY (`id_exp`),
+  ADD KEY `ID_ORGANISMO` (`id_organismo`),
+  ADD KEY `ID_PERSONAL` (`id_personal`);
 
 --
 -- Indices de la tabla `organismo`
@@ -179,7 +194,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `expedientes`
 --
 ALTER TABLE `expedientes`
-  MODIFY `ID_EXP` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_exp` int(255) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `organismo`
@@ -191,7 +206,7 @@ ALTER TABLE `organismo`
 -- AUTO_INCREMENT de la tabla `personal`
 --
 ALTER TABLE `personal`
-  MODIFY `id_personal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id_personal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
@@ -207,8 +222,8 @@ ALTER TABLE `usuario`
 -- Filtros para la tabla `expedientes`
 --
 ALTER TABLE `expedientes`
-  ADD CONSTRAINT `expedientes_ibfk_1` FOREIGN KEY (`ID_ORGANISMO`) REFERENCES `organismo` (`ID_ORG`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `expedientes_ibfk_2` FOREIGN KEY (`ID_PERSONAL`) REFERENCES `personal` (`id_personal`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `expedientes_ibfk_1` FOREIGN KEY (`id_organismo`) REFERENCES `organismo` (`ID_ORG`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `expedientes_ibfk_2` FOREIGN KEY (`id_personal`) REFERENCES `personal` (`id_personal`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
