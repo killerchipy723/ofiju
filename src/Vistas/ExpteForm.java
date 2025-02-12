@@ -17,6 +17,12 @@ ExpteData ed = new ExpteData();
         pd.comboJuez(comboJuez);
          pd.comboDefensor(comboDefensor);
         setLocationRelativeTo(null);
+        pd.comboSecretario(comboSecretario);
+        pd.comboAbogado(comboAbo);
+        comboAsesor.addItem("NO CORRESPONDE");
+        comboAsesor.addItem("DRA. SINGH MARIELA");
+        comboAsesor.addItem("DR. SARAVIA LOPEZ, FERNANDO");
+        comboAsesor.addItem("DRA. ZIGARAN POMA, YONE");
     }
 
     /**
@@ -278,7 +284,6 @@ ExpteData ed = new ExpteData();
             }
         });
 
-        comboAsesor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dr. Saravia López, ", "Dra. Singh, Karina" }));
         comboAsesor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboAsesorActionPerformed(evt);
@@ -420,11 +425,17 @@ ExpteData ed = new ExpteData();
             }
         });
 
+        DateFechaAud.setDateFormatString("yyyy-MM-dd");
+
         jLabel10.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel10.setText("Fecha Egr");
 
+        DateFechaEgreso.setDateFormatString("yyyy-MM-dd");
+
         jLabel23.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel23.setText("Fecha Ing.");
+
+        DateFechaIng.setDateFormatString("yyyy-MM-dd");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);

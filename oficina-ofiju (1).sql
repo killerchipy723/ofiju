@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-02-2025 a las 00:09:43
--- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.0.30
+-- Tiempo de generación: 12-02-2025 a las 01:54:19
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,27 +30,28 @@ SET time_zone = "+00:00";
 CREATE TABLE `expedientes` (
   `id_exp` int(255) NOT NULL,
   `numero` varchar(100) NOT NULL,
-  `id_organismo` int(10) NOT NULL,
+  `organismo` varchar(100) NOT NULL,
   `legajo` varchar(50) NOT NULL,
   `ap` varchar(50) NOT NULL,
   `estado` varchar(50) NOT NULL,
   `caratula` varchar(300) NOT NULL,
-  `audiencista` varchar(100) NOT NULL,
+  `aud` varchar(100) NOT NULL,
   `apublico` varchar(100) NOT NULL,
   `tecnico` varchar(100) NOT NULL,
   `secretario` varchar(100) NOT NULL,
   `juez` varchar(100) NOT NULL,
   `fiscal` varchar(100) NOT NULL,
   `defensor` varchar(100) NOT NULL,
-  `abo` varchar(100) NOT NULL,
-  `faudiencia` date NOT NULL,
-  `haudiencia` varchar(150) NOT NULL,
+  `asesor` varchar(100) DEFAULT NULL,
+  `abo` varchar(100) DEFAULT 'NO CORRESPONDE',
+  `pedido` varchar(100) DEFAULT NULL,
+  `faud` date DEFAULT NULL,
+  `haud` varchar(150) DEFAULT NULL,
   `fingreso` date NOT NULL,
-  `fegreso` date NOT NULL,
+  `fegreso` date DEFAULT NULL,
   `utramite` varchar(200) NOT NULL,
-  `pedido` varchar(100) NOT NULL,
-  `observaciones` varchar(300) NOT NULL,
-  `id_personal` int(255) NOT NULL
+  `observaciones` varchar(300) DEFAULT NULL,
+  `id_personal` int(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -129,10 +130,12 @@ INSERT INTO `personal` (`id_personal`, `apellido`, `nombre`, `CARGO`) VALUES
 (34, 'SARAVIA', 'CESAR ARTURO', ' FISCAL'),
 (35, 'GUZMAN', 'HECTOR SEBASTIAN', 'JUEZ '),
 (36, 'OTERO', 'DIANA VERONICA', 'SECRETARIO'),
-(37, 'PALERMO', 'HUGO MATIAS', 'PALERMO'),
+(37, 'PALERMO', 'HUGO MATIAS', 'SECRETARIO'),
 (38, 'ANDIAS', 'RENATA', 'SECRETARIO'),
 (39, 'CAILLOU', 'LUCIANA', 'SECRETARIO'),
-(40, 'GARCIA', 'VALERIA', 'CARGO');
+(40, 'GARCIA', 'VALERIA', 'SECRETARIO'),
+(41, 'NO', 'CORRESPONDE', 'ABOGADO'),
+(42, 'DR. RUIZ', 'NICOLAS', 'ABOGADO');
 
 -- --------------------------------------------------------
 
@@ -165,7 +168,7 @@ INSERT INTO `usuario` (`ID_USUARIO`, `nombre`, `apellido`, `usuario`, `clave`, `
 --
 ALTER TABLE `expedientes`
   ADD PRIMARY KEY (`id_exp`),
-  ADD KEY `ID_ORGANISMO` (`id_organismo`),
+  ADD KEY `ID_ORGANISMO` (`organismo`),
   ADD KEY `ID_PERSONAL` (`id_personal`);
 
 --
@@ -206,7 +209,7 @@ ALTER TABLE `organismo`
 -- AUTO_INCREMENT de la tabla `personal`
 --
 ALTER TABLE `personal`
-  MODIFY `id_personal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id_personal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
@@ -222,7 +225,6 @@ ALTER TABLE `usuario`
 -- Filtros para la tabla `expedientes`
 --
 ALTER TABLE `expedientes`
-  ADD CONSTRAINT `expedientes_ibfk_1` FOREIGN KEY (`id_organismo`) REFERENCES `organismo` (`ID_ORG`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `expedientes_ibfk_2` FOREIGN KEY (`id_personal`) REFERENCES `personal` (`id_personal`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 

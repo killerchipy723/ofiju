@@ -41,7 +41,7 @@ public class ExpteData {
         JDateChooser fEgreso
         ) {
 
-    String sql = "INSERT INTO expedientes(numero, id_organismo, legajo, ap, estado, caratula, aud, apublico, "
+    String sql = "INSERT INTO expedientes(numero, organismo, legajo, ap, estado, caratula, aud, apublico, "
             + "tecnico, secretario, juez, fiscal, defensor, abo, pedido, faud, haud, fingreso, fegreso, uttramite, "
             + "observaciones) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
