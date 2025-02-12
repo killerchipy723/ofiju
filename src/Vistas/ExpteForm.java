@@ -1,11 +1,12 @@
 
 package Vistas;
 
+import Entidades.ExpteData;
 import Entidades.PersonalData;
 
 
 public class ExpteForm extends javax.swing.JFrame {
-
+ExpteData ed = new ExpteData();
    PersonalData pd = new PersonalData();
     public ExpteForm() {
         initComponents();
@@ -52,7 +53,7 @@ public class ExpteForm extends javax.swing.JFrame {
         comboAud = new javax.swing.JComboBox<>();
         comboAtencion = new javax.swing.JComboBox<>();
         jLabel25 = new javax.swing.JLabel();
-        comboTecnico1 = new javax.swing.JComboBox<>();
+        comboSecretario = new javax.swing.JComboBox<>();
         jPanel4 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
@@ -63,7 +64,7 @@ public class ExpteForm extends javax.swing.JFrame {
         comboDefensor = new javax.swing.JComboBox<>();
         comboAsesor = new javax.swing.JComboBox<>();
         jLabel24 = new javax.swing.JLabel();
-        comboDefensor1 = new javax.swing.JComboBox<>();
+        comboAbo = new javax.swing.JComboBox<>();
         jPanel5 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -76,11 +77,11 @@ public class ExpteForm extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         comboHora = new javax.swing.JComboBox<>();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        DateFechaAud = new com.toedter.calendar.JDateChooser();
         jLabel10 = new javax.swing.JLabel();
-        jDateChooser2 = new com.toedter.calendar.JDateChooser();
+        DateFechaEgreso = new com.toedter.calendar.JDateChooser();
         jLabel23 = new javax.swing.JLabel();
-        jDateChooser3 = new com.toedter.calendar.JDateChooser();
+        DateFechaIng = new com.toedter.calendar.JDateChooser();
         jPanel6 = new javax.swing.JPanel();
         btnModificar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
@@ -185,9 +186,9 @@ public class ExpteForm extends javax.swing.JFrame {
 
         jLabel25.setText("Secretario");
 
-        comboTecnico1.addActionListener(new java.awt.event.ActionListener() {
+        comboSecretario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboTecnico1ActionPerformed(evt);
+                comboSecretarioActionPerformed(evt);
             }
         });
 
@@ -205,7 +206,7 @@ public class ExpteForm extends javax.swing.JFrame {
                             .addComponent(jLabel25))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(comboTecnico1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(comboSecretario, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(comboTecnico, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -243,7 +244,7 @@ public class ExpteForm extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel25)
-                    .addComponent(comboTecnico1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(comboSecretario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
@@ -284,11 +285,11 @@ public class ExpteForm extends javax.swing.JFrame {
             }
         });
 
-        jLabel24.setText("Querellante");
+        jLabel24.setText("Abogado Particular");
 
-        comboDefensor1.addActionListener(new java.awt.event.ActionListener() {
+        comboAbo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboDefensor1ActionPerformed(evt);
+                comboAboActionPerformed(evt);
             }
         });
 
@@ -312,7 +313,7 @@ public class ExpteForm extends javax.swing.JFrame {
                             .addComponent(jLabel24, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(comboDefensor1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(comboAbo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(comboFiscal, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addComponent(comboAsesor, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -341,7 +342,7 @@ public class ExpteForm extends javax.swing.JFrame {
                     .addComponent(jLabel20))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(comboDefensor1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboAbo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel24))
                 .addContainerGap())
         );
@@ -420,7 +421,7 @@ public class ExpteForm extends javax.swing.JFrame {
         });
 
         jLabel10.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
-        jLabel10.setText("Fecha Ing.");
+        jLabel10.setText("Fecha Egr");
 
         jLabel23.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel23.setText("Fecha Ing.");
@@ -476,7 +477,7 @@ public class ExpteForm extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(DateFechaAud, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -484,11 +485,11 @@ public class ExpteForm extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel23)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jDateChooser3, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(DateFechaIng, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel10)
                 .addGap(18, 18, 18)
-                .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(DateFechaEgreso, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -528,11 +529,11 @@ public class ExpteForm extends javax.swing.JFrame {
                             .addComponent(jLabel9)
                             .addComponent(comboHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel23))
-                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(DateFechaAud, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(DateFechaEgreso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel10)))
-                    .addComponent(jDateChooser3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(DateFechaIng, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(22, 22, 22))
         );
 
@@ -661,16 +662,16 @@ public class ExpteForm extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-
+        ed.agregarExpte(txtExpte, comboOrganismo, txtLegajo, txtAp, comboEstadoImputado, txtCaratula, comboAud, comboAtencion, comboTecnico, comboSecretario, comboJuez, comboFiscal, comboDefensor, comboAsesor, comboAbo, comboEstadoExpte, txtObs, comboPedido, DateFechaAud, comboHora, DateFechaEgreso, DateFechaEgreso);
     }//GEN-LAST:event_btnGuardarActionPerformed
 
-    private void comboDefensor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboDefensor1ActionPerformed
+    private void comboAboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboAboActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_comboDefensor1ActionPerformed
+    }//GEN-LAST:event_comboAboActionPerformed
 
-    private void comboTecnico1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboTecnico1ActionPerformed
+    private void comboSecretarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboSecretarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_comboTecnico1ActionPerformed
+    }//GEN-LAST:event_comboSecretarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -708,15 +709,18 @@ public class ExpteForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private com.toedter.calendar.JDateChooser DateFechaAud;
+    private com.toedter.calendar.JDateChooser DateFechaEgreso;
+    private com.toedter.calendar.JDateChooser DateFechaIng;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnModificar;
+    private javax.swing.JComboBox<String> comboAbo;
     private javax.swing.JComboBox<String> comboAsesor;
     private javax.swing.JComboBox<String> comboAtencion;
     private javax.swing.JComboBox<String> comboAud;
     private javax.swing.JComboBox<String> comboDefensor;
-    private javax.swing.JComboBox<String> comboDefensor1;
     private javax.swing.JComboBox<String> comboEstadoExpte;
     private javax.swing.JComboBox<String> comboEstadoImputado;
     private javax.swing.JComboBox<String> comboFiscal;
@@ -724,11 +728,8 @@ public class ExpteForm extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> comboJuez;
     private javax.swing.JComboBox<String> comboOrganismo;
     private javax.swing.JComboBox<String> comboPedido;
+    private javax.swing.JComboBox<String> comboSecretario;
     private javax.swing.JComboBox<String> comboTecnico;
-    private javax.swing.JComboBox<String> comboTecnico1;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
-    private com.toedter.calendar.JDateChooser jDateChooser2;
-    private com.toedter.calendar.JDateChooser jDateChooser3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

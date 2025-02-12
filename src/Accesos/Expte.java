@@ -2,160 +2,251 @@
 package Accesos;
 
 import java.sql.Date;
-import java.sql.Time;
+
 
 public class Expte {
-    private int ID_EXP;
-    private int NUMERO;
-    private String CARATULA;
-    private int LEGAJO;
-    private int AP;
-    private String ESTADO;
-    private String OBSERVACIONES;
-    private Date FECHA_INGRESO;
-    private Date FECHA_EGRESO;
-    private Date FECHA_AUDIENCIA;
-    private Time HORA_AUDIENCIA;
-    private String ULTIMO_TRAMITE;
-    private int ID_ORGANISMO;
-    private int ID_PERSONAL;
+    private int id_expte;
+    private String numero;
+    private int id_organismo;
+    private String legajo;
+    private String ap;
+    private String estado;
+    private String caratula;
+    private String aud;
+    private String apublico;
+    private String tecnico;
+    private String secretario;
+    private String juez;
+    private String fiscal;
+    private String defensor;
+    private String abo;
+    private Date faud;
+    private String haud;
+    private Date fingreso;
+    private Date fegreso;
+    private String utramite;
+    private String pedido;
+    private String observaciones;
+    private int id_personal;
 
     public Expte() {
     }
 
-    public Expte(int ID_EXP, int NUMERO, String CARATULA, int LEGAJO, int AP, String ESTADO, String OBSERVACIONES, Date FECHA_INGRESO, Date FECHA_EGRESO, Date FECHA_AUDIENCIA, Time HORA_AUDIENCIA, String ULTIMO_TRAMITE, int ID_ORGANISMO, int ID_PERSONAL) {
-        this.ID_EXP = ID_EXP;
-        this.NUMERO = NUMERO;
-        this.CARATULA = CARATULA;
-        this.LEGAJO = LEGAJO;
-        this.AP = AP;
-        this.ESTADO = ESTADO;
-        this.OBSERVACIONES = OBSERVACIONES;
-        this.FECHA_INGRESO = FECHA_INGRESO;
-        this.FECHA_EGRESO = FECHA_EGRESO;
-        this.FECHA_AUDIENCIA = FECHA_AUDIENCIA;
-        this.HORA_AUDIENCIA = HORA_AUDIENCIA;
-        this.ULTIMO_TRAMITE = ULTIMO_TRAMITE;
-        this.ID_ORGANISMO = ID_ORGANISMO;
-        this.ID_PERSONAL = ID_PERSONAL;
+    public Expte(int id_expte, String numero, int id_organismo, String legajo, String ap, String estado, String caratula, String aud, String apublico, String tecnico, String secretario, String juez, String fiscal, String defensor, String abo, Date faud, String haud, Date fingreso, Date fegreso, String utramite, String pedido, String observaciones, int id_personal) {
+        this.id_expte = id_expte;
+        this.numero = numero;
+        this.id_organismo = id_organismo;
+        this.legajo = legajo;
+        this.ap = ap;
+        this.estado = estado;
+        this.caratula = caratula;
+        this.aud = aud;
+        this.apublico = apublico;
+        this.tecnico = tecnico;
+        this.secretario = secretario;
+        this.juez = juez;
+        this.fiscal = fiscal;
+        this.defensor = defensor;
+        this.abo = abo;
+        this.faud = faud;
+        this.haud = haud;
+        this.fingreso = fingreso;
+        this.fegreso = fegreso;
+        this.utramite = utramite;
+        this.pedido = pedido;
+        this.observaciones = observaciones;
+        this.id_personal = id_personal;
     }
 
-    public int getID_EXP() {
-        return ID_EXP;
+    public int getId_expte() {
+        return id_expte;
     }
 
-    public void setID_EXP(int ID_EXP) {
-        this.ID_EXP = ID_EXP;
+    public void setId_expte(int id_expte) {
+        this.id_expte = id_expte;
     }
 
-    public int getNUMERO() {
-        return NUMERO;
+    public String getNumero() {
+        return numero;
     }
 
-    public void setNUMERO(int NUMERO) {
-        this.NUMERO = NUMERO;
+    public void setNumero(String numero) {
+        this.numero = numero;
     }
 
-    public String getCARATULA() {
-        return CARATULA;
+    public int getId_organismo() {
+        return id_organismo;
     }
 
-    public void setCARATULA(String CARATULA) {
-        this.CARATULA = CARATULA;
+    public void setId_organismo(int id_organismo) {
+        this.id_organismo = id_organismo;
     }
 
-    public int getLEGAJO() {
-        return LEGAJO;
+    public String getLegajo() {
+        return legajo;
     }
 
-    public void setLEGAJO(int LEGAJO) {
-        this.LEGAJO = LEGAJO;
+    public void setLegajo(String legajo) {
+        this.legajo = legajo;
     }
 
-    public int getAP() {
-        return AP;
+    public String getAp() {
+        return ap;
     }
 
-    public void setAP(int AP) {
-        this.AP = AP;
+    public void setAp(String ap) {
+        this.ap = ap;
     }
 
-    public String getESTADO() {
-        return ESTADO;
+    public String getEstado() {
+        return estado;
     }
 
-    public void setESTADO(String ESTADO) {
-        this.ESTADO = ESTADO;
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
-    public String getOBSERVACIONES() {
-        return OBSERVACIONES;
+    public String getCaratula() {
+        return caratula;
     }
 
-    public void setOBSERVACIONES(String OBSERVACIONES) {
-        this.OBSERVACIONES = OBSERVACIONES;
+    public void setCaratula(String caratula) {
+        this.caratula = caratula;
     }
 
-    public Date getFECHA_INGRESO() {
-        return FECHA_INGRESO;
+    public String getAud() {
+        return aud;
     }
 
-    public void setFECHA_INGRESO(Date FECHA_INGRESO) {
-        this.FECHA_INGRESO = FECHA_INGRESO;
+    public void setAud(String aud) {
+        this.aud = aud;
     }
 
-    public Date getFECHA_EGRESO() {
-        return FECHA_EGRESO;
+    public String getApublico() {
+        return apublico;
     }
 
-    public void setFECHA_EGRESO(Date FECHA_EGRESO) {
-        this.FECHA_EGRESO = FECHA_EGRESO;
+    public void setApublico(String apublico) {
+        this.apublico = apublico;
     }
 
-    public Date getFECHA_AUDIENCIA() {
-        return FECHA_AUDIENCIA;
+    public String getTecnico() {
+        return tecnico;
     }
 
-    public void setFECHA_AUDIENCIA(Date FECHA_AUDIENCIA) {
-        this.FECHA_AUDIENCIA = FECHA_AUDIENCIA;
+    public void setTecnico(String tecnico) {
+        this.tecnico = tecnico;
     }
 
-    public Time getHORA_AUDIENCIA() {
-        return HORA_AUDIENCIA;
+    public String getSecretario() {
+        return secretario;
     }
 
-    public void setHORA_AUDIENCIA(Time HORA_AUDIENCIA) {
-        this.HORA_AUDIENCIA = HORA_AUDIENCIA;
+    public void setSecretario(String secretario) {
+        this.secretario = secretario;
     }
 
-    public String getULTIMO_TRAMITE() {
-        return ULTIMO_TRAMITE;
+    public String getJuez() {
+        return juez;
     }
 
-    public void setULTIMO_TRAMITE(String ULTIMO_TRAMITE) {
-        this.ULTIMO_TRAMITE = ULTIMO_TRAMITE;
+    public void setJuez(String juez) {
+        this.juez = juez;
     }
 
-    public int getID_ORGANISMO() {
-        return ID_ORGANISMO;
+    public String getFiscal() {
+        return fiscal;
     }
 
-    public void setID_ORGANISMO(int ID_ORGANISMO) {
-        this.ID_ORGANISMO = ID_ORGANISMO;
+    public void setFiscal(String fiscal) {
+        this.fiscal = fiscal;
     }
 
-    public int getID_PERSONAL() {
-        return ID_PERSONAL;
+    public String getDefensor() {
+        return defensor;
     }
 
-    public void setID_PERSONAL(int ID_PERSONAL) {
-        this.ID_PERSONAL = ID_PERSONAL;
+    public void setDefensor(String defensor) {
+        this.defensor = defensor;
+    }
+
+    public String getAbo() {
+        return abo;
+    }
+
+    public void setAbo(String abo) {
+        this.abo = abo;
+    }
+
+    public Date getFaud() {
+        return faud;
+    }
+
+    public void setFaud(Date faud) {
+        this.faud = faud;
+    }
+
+    public String getHaud() {
+        return haud;
+    }
+
+    public void setHaud(String haud) {
+        this.haud = haud;
+    }
+
+    public Date getFingreso() {
+        return fingreso;
+    }
+
+    public void setFingreso(Date fingreso) {
+        this.fingreso = fingreso;
+    }
+
+    public Date getFegreso() {
+        return fegreso;
+    }
+
+    public void setFegreso(Date fegreso) {
+        this.fegreso = fegreso;
+    }
+
+    public String getUtramite() {
+        return utramite;
+    }
+
+    public void setUtramite(String utramite) {
+        this.utramite = utramite;
+    }
+
+    public String getPedido() {
+        return pedido;
+    }
+
+    public void setPedido(String pedido) {
+        this.pedido = pedido;
+    }
+
+    public String getObservaciones() {
+        return observaciones;
+    }
+
+    public void setObservaciones(String observaciones) {
+        this.observaciones = observaciones;
+    }
+
+    public int getId_personal() {
+        return id_personal;
+    }
+
+    public void setId_personal(int id_personal) {
+        this.id_personal = id_personal;
     }
 
     @Override
     public String toString() {
-        return "Expte{" + "ID_EXP=" + ID_EXP + ", NUMERO=" + NUMERO + ", CARATULA=" + CARATULA + ", LEGAJO=" + LEGAJO + ", AP=" + AP + ", ESTADO=" + ESTADO + ", OBSERVACIONES=" + OBSERVACIONES + ", FECHA_INGRESO=" + FECHA_INGRESO + ", FECHA_EGRESO=" + FECHA_EGRESO + ", FECHA_AUDIENCIA=" + FECHA_AUDIENCIA + ", HORA_AUDIENCIA=" + HORA_AUDIENCIA + ", ULTIMO_TRAMITE=" + ULTIMO_TRAMITE + ", ID_ORGANISMO=" + ID_ORGANISMO + ", ID_PERSONAL=" + ID_PERSONAL + '}';
+        return "Expte{" + "id_expte=" + id_expte + ", numero=" + numero + ", id_organismo=" + id_organismo + ", legajo=" + legajo + ", ap=" + ap + ", estado=" + estado + ", caratula=" + caratula + ", aud=" + aud + ", apublico=" + apublico + ", tecnico=" + tecnico + ", secretario=" + secretario + ", juez=" + juez + ", fiscal=" + fiscal + ", defensor=" + defensor + ", abo=" + abo + ", faud=" + faud + ", haud=" + haud + ", fingreso=" + fingreso + ", fegreso=" + fegreso + ", utramite=" + utramite + ", pedido=" + pedido + ", observaciones=" + observaciones + ", id_personal=" + id_personal + '}';
     }
+    
     
     
     
