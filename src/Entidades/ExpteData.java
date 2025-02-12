@@ -42,8 +42,8 @@ public class ExpteData {
         ) {
 
     String sql = "INSERT INTO expedientes(numero, organismo, legajo, ap, estado, caratula, aud, apublico, "
-            + "tecnico, secretario, juez, fiscal, defensor, abo, pedido, faud, haud, fingreso, fegreso, uttramite, "
-            + "observaciones) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            + "tecnico, secretario, juez, fiscal, defensor, asesor,abo, pedido, faud, haud, fingreso, fegreso, utramite, "
+            + "observaciones) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
     try {
        
