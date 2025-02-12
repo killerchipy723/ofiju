@@ -46,9 +46,11 @@ public class FormPrincipal extends javax.swing.JFrame {
         barraMenu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         barraMenu.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
 
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/disco-flexible.png"))); // NOI18N
         jMenu1.setText("Archivo");
         barraMenu.add(jMenu1);
 
+        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/carga-en-la-nube.png"))); // NOI18N
         jMenu2.setText("Expediente");
         jMenu2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,9 +68,11 @@ public class FormPrincipal extends javax.swing.JFrame {
 
         barraMenu.add(jMenu2);
 
+        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/consulta.png"))); // NOI18N
         jMenu3.setText("Consultas");
         barraMenu.add(jMenu3);
 
+        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/comprobado.png"))); // NOI18N
         jMenu4.setText("Administración");
 
         jMenuItem1.setText("Administración de Usuarios");
