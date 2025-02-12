@@ -3,6 +3,7 @@ package Vistas;
 
 import Entidades.ExpteData;
 import Entidades.PersonalData;
+import javax.swing.JOptionPane;
 
 
 public class ExpteForm extends javax.swing.JFrame {
@@ -538,20 +539,22 @@ ExpteData ed = new ExpteData();
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(comboPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4)
-                            .addComponent(DateFechaAud, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(DateFechaAud, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel7)
+                                .addComponent(comboPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel4)))
                         .addGap(22, 22, 22))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGap(1, 1, 1)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel9)
-                                .addComponent(comboHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel23)
-                                .addComponent(DateFechaIng, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(DateFechaIng, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel9)
+                                    .addComponent(comboHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel23)))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(DateFechaEgreso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel10)))
@@ -579,6 +582,11 @@ ExpteData ed = new ExpteData();
 
         btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/MODIFICAR.jpg"))); // NOI18N
         btnModificar.setText("MODIFICAR");
+        btnModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -612,7 +620,7 @@ ExpteData ed = new ExpteData();
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1326, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -674,7 +682,8 @@ ExpteData ed = new ExpteData();
     }//GEN-LAST:event_comboOrganismoActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-
+        String numeroExpte = txtExpte.getText();
+        ed.buscarExpte(numeroExpte, txtExpte, comboOrganismo, txtLegajo, txtAp, comboEstadoImputado, txtCaratula, comboAud, comboAtencion, comboTecnico, comboSecretario, comboJuez, comboFiscal, comboDefensor, comboAsesor, comboAbo, comboEstadoExpte, txtObs, comboPedido, DateFechaAud, comboHora, DateFechaIng, DateFechaEgreso);   
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
@@ -682,7 +691,12 @@ ExpteData ed = new ExpteData();
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        ed.agregarExpte(txtExpte, comboOrganismo, txtLegajo, txtAp, comboEstadoImputado, txtCaratula, comboAud, comboAtencion, comboTecnico, comboSecretario, comboJuez, comboFiscal, comboDefensor, comboAsesor, comboAbo, comboEstadoExpte, txtObs, comboPedido, DateFechaAud, comboHora, DateFechaEgreso, DateFechaEgreso);
+       if(txtExpte.getText().isEmpty()|| txtAp.getText().isEmpty()||txtCaratula.getText().isEmpty()||txtLegajo.getText().isEmpty()){
+           JOptionPane.showMessageDialog(this,"Por favor verificar que los campos obligatorios no esten vacíos","AVISO",JOptionPane.WARNING_MESSAGE);
+       }else{
+            ed.agregarExpte(txtExpte, comboOrganismo, txtLegajo, txtAp, comboEstadoImputado, txtCaratula, comboAud, comboAtencion, comboTecnico, comboSecretario, comboJuez, comboFiscal, comboDefensor, comboAsesor, comboAbo, comboEstadoExpte, txtObs, comboPedido, DateFechaAud, comboHora, DateFechaIng, DateFechaEgreso);
+            limpiar();
+       }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void comboAboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboAboActionPerformed
@@ -692,6 +706,12 @@ ExpteData ed = new ExpteData();
     private void comboSecretarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboSecretarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_comboSecretarioActionPerformed
+
+    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
+        String numeroExpte = txtExpte.getText();
+        ed.modificarExpte(numeroExpte, txtExpte, comboOrganismo, txtLegajo, txtAp, comboEstadoImputado, txtCaratula, comboAud, comboAtencion, comboTecnico, comboSecretario, comboJuez, comboFiscal, comboDefensor, comboAsesor, comboAbo, comboEstadoExpte, txtObs, comboPedido, DateFechaAud, comboHora, DateFechaIng, DateFechaEgreso);
+        limpiar();
+    }//GEN-LAST:event_btnModificarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -726,6 +746,16 @@ ExpteData ed = new ExpteData();
                 new ExpteForm().setVisible(true);
             }
         });
+    }
+    
+    private void limpiar(){
+        txtAp.setText("");
+        txtCaratula.setText("");
+        txtExpte.setText("");
+        txtLegajo.setText("");
+        txtObs.setText("");
+        txtExpte.requestFocus();
+    
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
